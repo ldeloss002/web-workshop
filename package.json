@@ -1,0 +1,26 @@
+{
+  "name": "web-workshop",
+  "type": "module",
+  "private": true,
+  "packageManager": "yarn@4.1.0",
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.47.4",
+    "@slidev/theme-bricks": "^0.25.0",
+    "@slidev/theme-default": "^0.25.0",
+    "@slidev/theme-seriph": "^0.25.0",
+    "slidev-theme-smile": "^0.8.2"
+  },
+  "devDependencies": {
+    "@iconify-json/game-icons": "^1.1.7",
+    "@iconify-json/icon-park": "^1.1.13",
+    "@iconify-json/logos": "^1.1.42",
+    "playwright-chromium": "^1.41.2",
+    "sass": "^1.70.0",
+    "typescript": "^5.3.3"
+  }
+}

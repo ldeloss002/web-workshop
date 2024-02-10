@@ -1,0 +1,29 @@
+:root {
+  /* default theme color */
+  /* can be overrided by uses `themeConfig` option */
+  --slidev-theme-primary: #7d5cc6;
+}
+
+.slidev-layout {
+  // background-color: #111;
+  // color: #fff;
+  background-color: #fff;
+  color: #111;
+}
+
+.slidev-layout.cover,
+.slidev-layout.intro {
+  @apply h-full grid font-sans;
+
+  h1 {
+    @apply text-6xl leading-20 font-bold;
+  }
+
+  h1 + p {
+    @apply -mt-2 opacity-50 mb-4;
+  }
+
+  p + h2, ul + h2, table + h2 {
+    @apply mt-10;
+  }
+}
