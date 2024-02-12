@@ -1238,17 +1238,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@slidev/theme-bricks@npm:^0.25.0":
-  version: 0.25.0
-  resolution: "@slidev/theme-bricks@npm:0.25.0"
-  dependencies:
-    "@slidev/types": "npm:^0.47.0"
-    codemirror-theme-vars: "npm:^0.1.2"
-    prism-theme-vars: "npm:^0.2.4"
-  checksum: 10c0/da2556fb429dacb40185553d18c51f6bd410c62d12ec9ffc80004c4b73894cd66de3d2c9282eb41cc230625d94cfd1d13261b5725901899738198e8d8c1e1749
-  languageName: node
-  linkType: hard
-
 "@slidev/theme-default@npm:^0.25.0":
   version: 0.25.0
   resolution: "@slidev/theme-default@npm:0.25.0"
@@ -1260,28 +1249,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@slidev/theme-seriph@npm:^0.25.0":
-  version: 0.25.0
-  resolution: "@slidev/theme-seriph@npm:0.25.0"
-  dependencies:
-    "@slidev/types": "npm:^0.47.0"
-    codemirror-theme-vars: "npm:^0.1.2"
-    prism-theme-vars: "npm:^0.2.4"
-  checksum: 10c0/e40bc81237cc5e6fc43528dddde0496d0759e87e51a93d84b1a9116b4adf4639588140c0138df64e8d1ea09a9f06594f571ec7e81a161053fe692860d92072fd
-  languageName: node
-  linkType: hard
-
-"@slidev/types@npm:0.47.4":
+"@slidev/types@npm:0.47.4, @slidev/types@npm:^0.47.0":
   version: 0.47.4
   resolution: "@slidev/types@npm:0.47.4"
   checksum: 10c0/c4631e00bda3fa493eb4410faa127d0b8c1b0c01b92c027292aee1031bc4da4a072caa02d38493eb0031f0589a3c23e3800de50f32996df5702d780bc82b1c08
-  languageName: node
-  linkType: hard
-
-"@slidev/types@npm:^0.47.0":
-  version: 0.47.1
-  resolution: "@slidev/types@npm:0.47.1"
-  checksum: 10c0/d0441b9724b276e7079e9689e497750a0c34a9c75e98769efbf83e37c4e89dbd8cfbe4c3442682792655a09eb1b45a7d9d9880c73ea6e2a1aca40adf3224c223
   languageName: node
   linkType: hard
 
@@ -7190,9 +7161,7 @@ __metadata:
     "@iconify-json/icon-park": "npm:^1.1.13"
     "@iconify-json/logos": "npm:^1.1.42"
     "@slidev/cli": "npm:^0.47.4"
-    "@slidev/theme-bricks": "npm:^0.25.0"
     "@slidev/theme-default": "npm:^0.25.0"
-    "@slidev/theme-seriph": "npm:^0.25.0"
     playwright-chromium: "npm:^1.41.2"
     sass: "npm:^1.70.0"
     slidev-theme-smile: "npm:^0.8.2"
