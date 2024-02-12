@@ -114,7 +114,7 @@ clicks: 3
  -->
 
 ---
-layout: fact
+layout: center
 ---
 
 [bit.ly/ccny-web-workshop](https://bit.ly/ccny-web-workshop){class="text-4xl font-bold"}
@@ -293,6 +293,7 @@ label {
 
 ---
 layout: two-cols
+clicks: 7
 ---
 
 ```js {1-4|2,9,21|2,9-21|6|1-2,6,9-14,21|1-2,6,9-17,21|1-2,6-7,9-17,21|1-2,6-7,9-20,21}{lines: true}
@@ -305,24 +306,37 @@ let state = [];
 loadState();
 
 addButton.addEventListener("click", function() {
-	let task = {
-		id: Date.now(),
-		content: textInput.value,
-		checked: false
-	};
+  let task = {
+    id: Date.now(),
+    content: textInput.value,
+    checked: false
+  };
 
-	state.push(task);
-	saveState();
+  state.push(task);
+  saveState();
 
-	let todoItem = createItemElement(task);
-	todoList.append(todoItem);
+  let todoItem = createItemElement(task);
+  todoList.append(todoItem);
 });
 
 // ...
 ```
 
-<task />
+<div class="flex flex-col gap-2 items-center">
+  <div v-click="3" :class="['flex', 'flex-col', 'gap-4', 'items-center', { 'opacity-50': $clicks > 6 }]">
+    <pre><code
+      v-html="'state = ' + (
+        $clicks < 5 ? '[]' : `[{\n\tid: ${Date.now()},\n\tcontent: ...,\n\tchecked: false\n}]
+      `)"
+    /></pre>
+  </div>
 
+  <div :class="['flex', 'flex-col', 'gap-4', 'items-center', { 'opacity-50': $clicks > 2 && $clicks < 7 }]">
+    <prompt v-click="1" :add-class="{ 'animate-heart-beat': $clicks > 0 }" />
+    <task v-click="2" />
+    <task v-click="7" />
+  </div>
+</div>
 
 <!--
   This is some of the JavaScript that's in the `script.js` file.
@@ -351,63 +365,63 @@ addButton.addEventListener("click", function() {
 
 ---
 layout: two-cols
+clicks: 5
 ---
 
-```js
+```js {all|27-29|31-32|34-39|41-49|51}{lines: true, startLine: 26}
 function createItemElement(item) {
-	let todoItemTemplate = document.querySelector("#todo-item-template");
-	let todoItem = todoItemTemplate.content.cloneNode(true);
-	let listItem = todoItem.firstElementChild;
+  let todoItemTemplate = document.querySelector("#todo-item-template");
+  let todoItem = todoItemTemplate.content.cloneNode(true);
+  let listItem = todoItem.firstElementChild;
 
-	let content = todoItem.querySelector(".todo-item-content");
-	content.textContent = item.content;
+  let content = todoItem.querySelector(".todo-item-content");
+  content.textContent = item.content;
 
-	let checkbox = todoItem.querySelector(".todo-item-checkbox");
-	checkbox.checked = item.checked;
-	checkbox.addEventListener("input", function() {
-		item.checked = checkbox.checked;
-		saveState();
-	});
+  let checkbox = todoItem.querySelector(".todo-item-checkbox");
+  checkbox.checked = item.checked;
+  checkbox.addEventListener("input", function() {
+    item.checked = checkbox.checked;
+    saveState();
+  });
 
-	let removeButton = todoItem.querySelector(".remove-button");
-	removeButton.addEventListener("click", function() {
-		state = state.filter(function(listItem) {
-			return listItem.id !== item.id;
-		});
-		saveState();
+  let removeButton = todoItem.querySelector(".remove-button");
+  removeButton.addEventListener("click", function() {
+    state = state.filter(function(listItem) {
+      return listItem.id !== item.id;
+    });
+    saveState();
 
-		listItem.remove();
-	});
+    listItem.remove();
+  });
 
-	return todoItem;
+  return todoItem;
 }
 ```
 
+<div class="flex flex-col gap-12 items-center">
+  <pre v-if="$clicks < 5"><code
+    v-html="`item = {\n\tid: ${Date.now()},\n\tcontent: ...,\n\tchecked: false\n}`"
+  /></pre>
+
+  <task class="border-dashed border-3 border-purple opacity-50" content-class="invisible" v-if="$clicks < 5" />
+
+  <prompt v-if="$clicks > 4" />
+  <task v-if="$clicks > 4" />
+  <task v-if="$clicks > 4" />
+
+  <div class="flex flex-col gap-12 items-center">
+    <task
+      v-click="1"
+      :class="{ 'animate-zoom-in-down': $clicks > 0 }"
+      :checkbox-class="{ 'animate-shake-y': $clicks > 2 }"
+      :content-class="$clicks > 1 ? 'opacity-100' : 'opacity-0'"
+      :remove-class="{ 'animate-tada': $clicks > 3 }"
+    />
+  </div>
+</div>
+
+---
+layout: center
 ---
 
-# Behavior
-
-<!--
-  I'm going to start using JavaScript by talking about the control flow of what we want our website to do, rather than the means of how we're going to do it.
- -->
-
-<!--
-  So, what was the point of having an intermediate state between our HTML and JavaScript?
- -->
-
- <!--
-  Why render everything all over again?
-
-  Operations such as removing, editing, and checking if a task is completed, all require DOM manipulation, and that means, so does our load function.
-
-
-  -->
-
-
----
-
-# The Render Loop
-
-<!--
-  So, the render loop is kinda bad, because it's not efficient, and it's not scalable.
-   -->
+[bit.ly/ccny-web-workshop](https://bit.ly/ccny-web-workshop){class="text-4xl font-bold"}
