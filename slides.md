@@ -21,16 +21,14 @@ Welcome to **GWC** + **Beavers Code (ACM @ CCNY)**
 
 # Web Workshop
 
-<!--
-  My name is Lemuel, I am also a student at CCNY, and have been in the space of web development for a while now (almost half my life [help me]).
+An introduction to web development
 
-  And like most online tech spaces, everything is *always* changing, and it feels important to keep up with the latest trends and technologies.
-  It's important to know what's out there and what's possible, but it's also good to stick with what you know if it works for you.
+<!--
+  My name is Lemuel, I am also a student here, and I'm here to teach you about web development.
  -->
 
 
 ---
-clicks: 1
 ---
 
 <div class="flex items-center justify-between">
@@ -45,13 +43,13 @@ clicks: 1
 </div>
 
 <!--
-  We'll be making a TODO app, a website that lets you add, remove, edit, and complete tasks.
+  We'll be making a TODO app, a website that lets you add, remove, and complete tasks that you have to do._**[>]**_
 
-  To do this, we'll learn about HTML, CSS, and JavaScript, and how they work together to create a website.
+  We'll be using HTML, CSS, and JavaScript to build it, with a template that I've set up. And I'll show you how to use it in a bit.
+  Having three whole languages to learn for one website is a bit much, but it's not as complicateas it sounds.
  -->
 
 ---
-clicks: 3
 ---
 
 <game-icons-grab
@@ -96,15 +94,20 @@ clicks: 3
   </box>
 </div>
 
+
 <!--
-  Most of "Big Tech" and all the companies you know are using a **framework** or **library**
-  to build their websites, that makes some of the complicated stuff easier to do.
+  There are actually a lot of different ways to build websites, and a lot of different tools to use.
 
-  Whatever they use, it all eventually get converted into HTML, CSS, and JavaScript.
+  Most of "Big Tech" and all the companies you know are using _**[>]**_"frameworks and libraries"
+  to build their websites, that makes some of the more complicated stuff easier to do.
 
-  Think of it like using a GPS instead of a traditional map, and it's a good thing because it lets you focus on more important things.
+  This includes using *other* languages or just someone else's code to build your website.
+  But the thing about developing on the web, is whatever they use all will eventually get _**[>]**_converted into HTML, CSS, and JavaScript.
 
-  In the same analogy, today you'll learn how the GPS works, so you can understand how to use the map better.
+  It's like using a _**[>]**_GPS instead of a traditional map, and it can a good thing because it lets you focus on more important things.
+  But sometimes, you need to know how to use a map. In case the GPS fails to tell you how to get somewhere very specific.
+
+  In case the analogy didn't stick, we're learning HTML, CSS, and JavaScript so you can better understand general concepts in web development.
 
   Oh, but first, a poll.
 
@@ -122,8 +125,15 @@ layout: center
 <!--
   I've set up a template to use that has basic the functions for adding, removing, and completing tasks.
 
+  [WAIT]
+
   I'll be explaining the how the existing code works, but I want you to style the your version of the website
   yourself, and decide with me what new features we should add later on, and how we should implement them.
+
+  [WAIT]
+
+  Im going to go through a lot of the code, but only be explaining the details that are important now.
+  Feel free to ask questions at literally any time, but we should have some time at the end for questions.
  -->
 
 ---
@@ -145,40 +155,38 @@ layout: two-cols
 </html>
 ```
 
-<v-click>
-
-```mermaid
-flowchart TD
-  html --> head
-  html --> body
-  body --> ...
-  head --> title
-  head --> link
-  head --> script
-```
-
-</v-click>
+<tag v-click name="html" class="w-sm">
+  <tag name="head">
+    <tag name="title">TODO</tag>
+    <tag name="link" />
+    <tag name="script" />
+  </tag>
+  <tag name="body">...</tag>
+</tag>
 
 <!--
-  We have less than an hour, so bare with me.
-
   This is part of the template `index.html` file that you should be starting with.
+
   Except for the `...` part, that's just me cutting out the rest.
 
-  Tags are used to structure content, they have a start and end tag, and can have attributes.
-  You can see the start and end tags for the `html`, `head`, and `body` tags.
+  HTML is used to write the structure of the website, and it's made up of "tags".
 
-  And self-closing tags, like the `link` tag, which is used to link to an outside file, in this case, our `styles.css`.
-  The `script` tag specifically to load our `script.js` file, which is where we write the JavaScript, the ".js".
+  Tags are used to structure content, they have a start and end tag, and can have attributes. Tag can also have other tags inside them... but not all.
 
-  And the `title` tag is used to set the title of the website, which is what you see in the tab of your browser.
+  You can see the start and end tags for the `html`_**[> TIMES THREE]**_, `head`_**[> TIMES THREE]**_, and `body`_**[> TIMES THREE]**_ tags.
 
-  The `rel=`, `href=`, `type=`, and `src=` are attributes, and they are used to add information about the tag.
+  There are *self*-closing tags, like the _**[>]**_`link` tag, which is used to *link* to an outside file, in this case, our `styles.css`.
+  The _**[>]**_`script` tag specifically to load JavaScript, in this case, our `script.js` file.
 
-  Tags have a parent-child relationship, and in this case, the `head` tag is the parent of the `title`, `link`, and `script` tags.
-  Yes, they're single parents, I know, but that's just the terminology for it. Don't ask how tags...
+  There's also the _**[>]**_`title` tag is used to set the title of the website, which is what you see in the tab of your browser.
 
-  Questions? Not about the last part, please.
+  _**[>]**_
+
+  The `rel=`, `href=`, `type=`, and `src=` are all attributes, and are used to attribute additional information about the tag.
+
+  Tags have a parent-child relationship, and in this case, the `head` tag is the parent of the children: `title`, `link`, and `script`.
+
+  Yes, they're all single parents, that's just the terminology for it.
  -->
 
 ---
@@ -212,40 +220,39 @@ flowchart TD
 ```
 
 <!--
-  So all the stuff in the `head` tag is not **visible** on the website, but instead
-  provides information about the website, like the title, and links to other files.
+  So all the stuff in the `head` tag is not actually **visible** on the website, but instead provides information *about* the website, like the title, and links to other files.
 
-  The `body` tag is where all the REAL content of the website goes. So here's the rundown:
+  The _**[>]**_`body` tag is where all the REAL content of the website goes. So, here's the rundown:
 
-  - The `div` tag is used to group tags together, and here it's used to group the input and button.
-  - The `input` tag here is used to get written text from the user.
-  - The `button` tag is a button. You can click it.
-  - The `ul` tag is for unordered lists, it's empty for now, but we'll use it to store our tasks.
-  - The `template` tag is not visible on the website, it's used to store tags that we can make copies of later.
-  - The `li` tag is for list items.
-  - The `label` tag is used to create a label for `input` tag with text.
-  - The `input` tag here is also used to create a checkbox, the `input` tag is used for a lot of things.
-  - The `span` tag is just used to structure text. It's empty, but we'll also use it to store our tasks.
-  - Another button.
+  - The _**[>]**_`div` tag is used to group other tags together. Here it's used to group the input and button.
+  - The _**[>]**_`input` tag here is used to get written text from the user.
+  - The _**[>]**_`button` tag is a button. You can click it.
+  - The _**[>]**_`ul` tag is for unordered lists, it's empty for now, but we'll use it to store our tasks.
+  - The _**[>]**_`template` tag is not visible on the website, it's used to store tag information that we can make copies of later.
+  - The _**[>]**_`li` tag is for list items.
+  - The _**[>]**_`label` tag is used to create a label for `input` tag with text.
+  - The _**[>]**_`input` tag here is also used to create a checkbox, the `input` tag is used for a lot of things.
+  - The _**[>]**_`span` tag is just used to structure text. It's empty, but you'll see why later.
+  - _**[>]**_Another button.
 
-  It's a lot of tags, but most of them are just for semantics which important for
-  accessibility, search engines, and not getting yelled at by your coworkers.
+  It's a lot of tags, but most of them are just for semantics which are important for
+  accessibility, search engines, and not getting yelled at by your coworkers for only using `div` all the time.
 
-  You can see that all tags have either an `id` or `class` attribute.
-  The `id` attribute is used to identify one specific tag that is unique. No more than one tag can have the same id.
+  You can see that all tags here either have an `id` or `class` *attribute*.
+
+  The `id` attribute is used to identify one specific tag, that is unique. No more than one tag can have the same id.
   The `class` attribute is used to categorize tags, meaning and multiple tags can have the same class.
 
-  The only tags using classes are the tags inside the `template` tag, and that's because we'll be making copies of them later, so there
-  would be multiple of them.
+  The only tags using classes are the tags inside the _**[>]**_`template` tag, and that's because we'll be making copies of them later, so, there *would* be multiple of them.
 
-  `id` and `class` attributes are used for query selectors, which are used in both CSS and JavaScript to select one or more tag.
+  `id` and `class` attributes are used for *query selectors* (that's our word of the day), which are used in both CSS and JavaScript to select one or more tag from our HTML.
   -->
 
 ---
 layout: two-cols
 ---
 
-```css {15-34|15,20|22,26|28,34|15-34}{lines: true, startLine: 13}
+```css {15-34|15,20|22,27|29,35|15-35}{lines: true, startLine: 13}
 ...
 
 label {
@@ -258,7 +265,8 @@ label {
 #todo-list {
     padding: 0;
     list-style-type: none;
-    min-width: 30rem;
+    width: 100%;
+    max-width: 30rem;
 }
 
 .todo-item {
@@ -272,28 +280,42 @@ label {
 ...
 ```
 
-![Screenshot](/inspect.png){class="w-100"}
+<v-after>
+
+  ![Screenshot](/inspect.png){class="w-100"}
+
+</v-after>
 
 <!--
   This is some of the CSS that's in the `styles.css` file.
 
-  Here, we have three kinds of selectors, the tag selector, the id selector, and the class selector.
+  CSS is used to style the website. It looks *very* different from HTML, but it's not that hard to understand.
 
-  The tag selector is used to select all tags of a certain type, and here it's used to select all `label` tags.
+  We start with a query selector, and then add *properties* to change the look of the tags that are selected.
 
-  The id selector, starts with a `#`, and used to select the one and only one tag with the id `todo-list`.
+  Here, we have three kinds of query selectors being used, the tag selector, the id selector, and the class selector.
+
+  The _**[>]**_tag selector is used to select all tags of a certain type, and here it's used to select all `label` tags.
+
+  The _**[>]**_id selector, starts with a `#`, and used to select the one and only one tag with the id `todo-list`.
   In this case, it's used to select the `ul` tag.
 
-  The class selector, starts with a `.`, and is used to select all tags with the class `todo-item`.
+  The _**[>]**_class selector, starts with a `.`, and is used to select all tags with the class `todo-item`.
   In this case, it's used to select all our `li` tags with the class `todo-item`.
 
-  I won't go into detail about the properties *yet*, but you can sort of see that they're used to change the size and positioning of the tags.
-  We'll revisit this once we start adding new things to the website.
+  _**[>]**_
+
+  This image is a screenshot of a browser's developer tools. I can inspect the website, and see all kinds of information about it.
+  This is a more styled version of the website that you're using, but it's technically the same HTML right now.
+
+  Here I've selected `li.todo-item`, which is the `li` tag with the class `todo-item`.
+  Don't mind that it's inside the `ul`, but do mind that how `ul` has the `todo-list` id, and shown with the `ul#todo-list`.
+
+  I won't go into details about the CSS properties *yet*, as we'll worry about how the website works first, then we can make it look nice.
  -->
 
 ---
 layout: two-cols
-clicks: 7
 ---
 
 ```js {1-4|2,9,21|2,9-21|6|1-2,6,9-14,21|1-2,6,9-17,21|1-2,6-7,9-17,21|1-2,6-7,9-20,21}{lines: true}
@@ -326,7 +348,7 @@ addButton.addEventListener("click", function() {
   <div v-click="3" :class="['flex', 'flex-col', 'gap-4', 'items-center', { 'opacity-50': $clicks > 6 }]">
     <pre><code
       v-html="'state = ' + (
-        $clicks < 5 ? '[]' : `[{\n\tid: ${Date.now()},\n\tcontent: ...,\n\tchecked: false\n}]
+        $clicks < 5 ? '[\n\t...\n]' : `[\n\t{\n\t\tid: ${Date.now()},\n\t\tcontent: ...,\n\t\tchecked: false\n\t}\n]
       `)"
     /></pre>
   </div>
@@ -341,15 +363,19 @@ addButton.addEventListener("click", function() {
 <!--
   This is some of the JavaScript that's in the `script.js` file.
 
-  The first four lines are used to select the tags we want to interact with, and store them in variables.
+  The first four lines are using the same query selectors to get the tags we want from our HTML to use in JavaScript.
+  `#text-input` to get our input tag with id `text-input`, `#add-button` to get our button tag with id `add-button`, and so on.
 
-  Using the `addButton` variable, we add an event listener to the button, so that when it's clicked, a function runs,
-  that in the end, adds a new task to the list.
+  Using our `addButton`, we add an *event listener* to the button, just meaning that when it's clicked, some function runs.
+  This function, in the end, adds a new task to our state, and then adds it to our website.
 
-  So, to start, "state" is a list that stores all our tasks, and it's used to keep track of what tasks are added, removed, and completed.
-  Each task is an object, and has an id, content, and checked property.
-  The id is used to uniquely identify the task, and uses the `Date.now()` function to get the current time in milliseconds as the id.
-  The content is the text of the task, it gets it from the input tag by using the `value` property of the `textInput` variable.
+  "State" in programming just means the current condition of something, nothing but terminology.
+
+  Our "state" here is a list. It's a that stores all our tasks, and it's used to keep track of what tasks are added, removed, and completed.
+  Each task is some object that has an id, some content, and a 'checked' property.
+
+  The id is used to uniquely identify the task, and uses the `Date.now()` function to set the current time in milliseconds as the id.
+  The content is the text of the task, it gets it from our input tag by using the `value` property of the our `textInput` variable.
   The checked property is used to keep track of whether the task is completed or not, and is set to `false` by default.
 
   After the task is created, it's added to the `state` list, and then saved to the browser's local storage.
@@ -360,41 +386,41 @@ addButton.addEventListener("click", function() {
   The `createItemElement` function turns the task object into an HTML element, and then it's added to the `todoList` tag using the `append` function.
   I'm going to be using "element" and "tag" interchangeably from now on.
 
+  Notice, there are two separate things being changed here, the state and the website, and they're updated separately.
  -->
 
 
 ---
 layout: two-cols
-clicks: 5
 ---
 
 ```js {all|27-29|31-32|34-39|41-49|51}{lines: true, startLine: 26}
 function createItemElement(item) {
-  let todoItemTemplate = document.querySelector("#todo-item-template");
-  let todoItem = todoItemTemplate.content.cloneNode(true);
-  let listItem = todoItem.firstElementChild;
+    let todoItemTemplate = document.querySelector("#todo-item-template");
+    let todoItem = todoItemTemplate.content.cloneNode(true);
+    let listItem = todoItem.firstElementChild;
 
-  let content = todoItem.querySelector(".todo-item-content");
-  content.textContent = item.content;
+    let content = todoItem.querySelector(".todo-item-content");
+    content.textContent = item.content;
 
-  let checkbox = todoItem.querySelector(".todo-item-checkbox");
-  checkbox.checked = item.checked;
-  checkbox.addEventListener("input", function() {
-    item.checked = checkbox.checked;
-    saveState();
-  });
-
-  let removeButton = todoItem.querySelector(".remove-button");
-  removeButton.addEventListener("click", function() {
-    state = state.filter(function(listItem) {
-      return listItem.id !== item.id;
+    let checkbox = todoItem.querySelector(".todo-item-checkbox");
+    checkbox.checked = item.checked;
+    checkbox.addEventListener("input", function() {
+        item.checked = checkbox.checked;
+        saveState();
     });
-    saveState();
 
-    listItem.remove();
-  });
+    let removeButton = todoItem.querySelector(".remove-button");
+    removeButton.addEventListener("click", function() {
+        state = state.filter(function(listItem) {
+            return listItem.id !== item.id;
+        });
+        saveState();
 
-  return todoItem;
+        listItem.remove();
+    });
+
+    return todoItem;
 }
 ```
 
