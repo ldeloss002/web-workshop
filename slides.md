@@ -21,7 +21,7 @@ Welcome to **GWC** + **Beavers Code (ACM @ CCNY)**
 
 # Web Workshop
 
-An introduction to web development
+An introduction to web development for all skill levels.
 
 <!--
   My name is Lemuel, I am also a student here, and I'm here to teach you about web development.
@@ -45,11 +45,10 @@ An introduction to web development
 <!--
   We'll be making a TODO app, a website that lets you add, remove, and complete tasks that you have to do._**[>]**_
 
-  We'll be using HTML, CSS, and JavaScript to build it, with a template that I've set up. And I'll show you how to use it in a bit.
-  Having three whole languages to learn for one website is a bit much, but it's not as complicateas it sounds.
+  We'll be using HTML, CSS, and JavaScript to build it.
+  Having three whole languages to learn for one website is a bit much, but it's not as complicated as it sounds.
  -->
 
----
 ---
 
 <game-icons-grab
@@ -98,18 +97,18 @@ An introduction to web development
 <!--
   There are actually a lot of different ways to build websites, and a lot of different tools to use.
 
-  Most of "Big Tech" and all the companies you know are using _**[>]**_"frameworks and libraries"
+  Most of "Big Tech"_**[>]**_  and all the companies you know are using "frameworks and libraries"
   to build their websites, that makes some of the more complicated stuff easier to do.
 
-  This includes using *other* languages or just someone else's code to build your website.
-  But the thing about developing on the web, is whatever they use all will eventually get _**[>]**_converted into HTML, CSS, and JavaScript.
+  "frameworks and libraries" just means using some *other* languages or someone else's code to build a website.
+  The thing about developing on the web, is whatever you use will all eventually get _**[>]**_ converted back into HTML, CSS, and JavaScript.
 
-  It's like using a _**[>]**_GPS instead of a traditional map, and it can a good thing because it lets you focus on more important things.
-  But sometimes, you need to know how to use a map. In case the GPS fails to tell you how to get somewhere very specific.
+  It's like using a _**[>]**_ GPS instead of a traditional map, and it can a good thing because it lets you *focus* on more important things than the details.
+  But sometimes, you need to know how to use a map, in case the GPS fails to tell you how to get somewhere very specific or obscure.
 
-  In case the analogy didn't stick, we're learning HTML, CSS, and JavaScript so you can better understand general concepts in web development.
+  In case the analogy didn't stick, we're learning HTML, CSS, and JavaScript so you can better understand what websites are made of, and how a framework might be used to make them.
 
-  Oh, but first, a poll.
+  But first, a poll:
 
   - How many of you have no experience in web development?
   - How many of you have some experience in web development?
@@ -120,27 +119,28 @@ An introduction to web development
 layout: center
 ---
 
-[bit.ly/ccny-web-workshop](https://bit.ly/ccny-web-workshop){class="text-4xl font-bold"}
+<https://bit.ly/ccny-web-workshop>{class="text-4xl font-bold"}
 
 <!--
   I've set up a template to use that has basic the functions for adding, removing, and completing tasks.
 
   [WAIT]
 
-  I'll be explaining the how the existing code works, but I want you to style the your version of the website
-  yourself, and decide with me what new features we should add later on, and how we should implement them.
+  I'll be explaining the how the existing code works, but I'll help you learn to style the your version of the website
+  on your own.
+  I also want you decide with me what new features we should add in the end, and maybe how you think we should implement them.
 
   [WAIT]
 
   Im going to go through a lot of the code, but only be explaining the details that are important now.
-  Feel free to ask questions at literally any time, but we should have some time at the end for questions.
+  Feel free to ask questions at literally any time, but we should have some time at the end for questions too.
  -->
 
 ---
 layout: two-cols
 ---
 
-```html {all|2|12|3|8|9|11|all|6|7|4|all}{lines: true}
+```html {all|2|12|3|8|9|11|all|6|7|4|all|3-8}{lines: true}
 <!DOCTYPE html>
 <html>
     <head>
@@ -169,29 +169,41 @@ layout: two-cols
 
   Except for the `...` part, that's just me cutting out the rest.
 
-  HTML is used to write the structure of the website, and it's made up of "tags".
+  HTML is used to write the structure of your website, and it is made up of "tags".
 
-  Tags are used to structure content, they have a start and end tag, and can have attributes. Tag can also have other tags inside them... but not all.
+  Tags are used to structure content, they have a start and end, and can have attributes. Tag can also have other tags inside them... but not all.
 
-  You can see the start and end tags for the `html`_**[> TIMES THREE]**_, `head`_**[> TIMES THREE]**_, and `body`_**[> TIMES THREE]**_ tags.
-
-  There are *self*-closing tags, like the _**[>]**_`link` tag, which is used to *link* to an outside file, in this case, our `styles.css`.
-  The _**[>]**_`script` tag specifically to load JavaScript, in this case, our `script.js` file.
-
-  There's also the _**[>]**_`title` tag is used to set the title of the website, which is what you see in the tab of your browser.
+  You can see the start and end tags for the `html`_**[>>]**_, `head`_**[>>]**_, and `body`_**[>>]**_ tags.
 
   _**[>]**_
 
-  The `rel=`, `href=`, `type=`, and `src=` are all attributes, and are used to attribute additional information about the tag.
+  There are *self*-closing tags, like the _**[>]**_ `link` tag, which is used to *link* to an outside file, in this case, our `styles.css`.
+  Then there's _**[>]**_ `script` tag specifically to load JavaScript, in this case, our `script.js` file.
 
-  Tags have a parent-child relationship, and in this case, the `head` tag is the parent of the children: `title`, `link`, and `script`.
+  There's also the _**[>]**_ `title` tag is used to set the title of the website, which is what you see in the tab of your browser on the top when you visit a website.
 
-  Yes, they're all single parents, that's just the terminology for it.
+  _**[>]**_
+
+  The `rel=`, `href=`, `type=`, and `src=` are all attributes, and are used to attribute additional information about a tag.
+
+  _**[>]**_
+
+  Tags have a parent-child relationship, and in this case, the `head` tag is the parent of its children: `title`, `link`, and `script`.
+
+  Yeah, they're technically all single parents, that's just the terminology.
+
+  It helps to think of this code like the diagram on the right, where all the tags are nested inside each other.
+
+  And all the tags here so far in the `head` tag.
+
+  _**[>]**_
+
+  All the stuff in the `head` tag is not actually what's **visible** on the website, but instead provides information *about* the website, like the title, and links to other files.
  -->
 
 ---
 
-```html {3-5|6-24|7,10|8|9|12|14,23|15,22|16,19|17|18|21|all|15-22}{lines: true}
+```html {6-24|7,10|8|9|12|14,23|15,22|16,19|17|18|21|all|15-22}{lines: true}
 <!DOCTYPE html>
 <html>
     <head>
@@ -220,20 +232,20 @@ layout: two-cols
 ```
 
 <!--
-  So all the stuff in the `head` tag is not actually **visible** on the website, but instead provides information *about* the website, like the title, and links to other files.
+  The `body` tag is where all the REAL content of the website goes. So, here's the rundown:
 
-  The _**[>]**_`body` tag is where all the REAL content of the website goes. So, here's the rundown:
+  - The _**[>]**_ `div` tag is used to group other tags together. Here it's used to group the input and button.
+  - The _**[>]**_ `input` tag here is used to get written text from the user.
+  - The _**[>]**_ `button` tag is a button. You can click it.
+  - The _**[>]**_ `ul` tag is for unordered lists, it's empty for now, but we'll use it to store our tasks.
+  - The _**[>]**_ `template` tag is not visible on the website, it's used to store tag information that we can make copies of later.
+  - The _**[>]**_ `li` tag is for list items.
+  - The _**[>]**_ `label` tag is used to create a label for `input` tag with text.
+  - The _**[>]**_ `input` tag here is also used to create a checkbox, the `input` tag is used for a lot of things.
+  - The _**[>]**_ `span` tag is just used to structure text. It's empty, but you'll see why later.
+  - _**[>]**_ Another button.
 
-  - The _**[>]**_`div` tag is used to group other tags together. Here it's used to group the input and button.
-  - The _**[>]**_`input` tag here is used to get written text from the user.
-  - The _**[>]**_`button` tag is a button. You can click it.
-  - The _**[>]**_`ul` tag is for unordered lists, it's empty for now, but we'll use it to store our tasks.
-  - The _**[>]**_`template` tag is not visible on the website, it's used to store tag information that we can make copies of later.
-  - The _**[>]**_`li` tag is for list items.
-  - The _**[>]**_`label` tag is used to create a label for `input` tag with text.
-  - The _**[>]**_`input` tag here is also used to create a checkbox, the `input` tag is used for a lot of things.
-  - The _**[>]**_`span` tag is just used to structure text. It's empty, but you'll see why later.
-  - _**[>]**_Another button.
+  _**[>]**_
 
   It's a lot of tags, but most of them are just for semantics which are important for
   accessibility, search engines, and not getting yelled at by your coworkers for only using `div` all the time.
@@ -243,9 +255,9 @@ layout: two-cols
   The `id` attribute is used to identify one specific tag, that is unique. No more than one tag can have the same id.
   The `class` attribute is used to categorize tags, meaning and multiple tags can have the same class.
 
-  The only tags using classes are the tags inside the _**[>]**_`template` tag, and that's because we'll be making copies of them later, so, there *would* be multiple of them.
+  The only tags using classes are the tags inside the _**[>]**_ `template` tag, and that's because we'll be making copies of them later, so, there *would* be multiple of them.
 
-  `id` and `class` attributes are used for *query selectors* (that's our word of the day), which are used in both CSS and JavaScript to select one or more tag from our HTML.
+  `id` and `class` attributes are used for *selectors* (that's our word of the day), which are used in both CSS and JavaScript to select one or more tag from our HTML.
   -->
 
 ---
@@ -293,14 +305,14 @@ label {
 
   We start with a query selector, and then add *properties* to change the look of the tags that are selected.
 
-  Here, we have three kinds of query selectors being used, the tag selector, the id selector, and the class selector.
+  Here, we have three kinds of selectors being used, the tag selector, the id selector, and the class selector.
 
-  The _**[>]**_tag selector is used to select all tags of a certain type, and here it's used to select all `label` tags.
+  The _**[>]**_ tag selector is used to select all tags of a certain type, and here it's used to select all `label` tags.
 
-  The _**[>]**_id selector, starts with a `#`, and used to select the one and only one tag with the id `todo-list`.
+  The _**[>]**_ id selector, starts with a `#`, and used to select the one and only one tag with the id `todo-list`.
   In this case, it's used to select the `ul` tag.
 
-  The _**[>]**_class selector, starts with a `.`, and is used to select all tags with the class `todo-item`.
+  The _**[>]**_ class selector, starts with a `.`, and is used to select all tags with the class `todo-item`.
   In this case, it's used to select all our `li` tags with the class `todo-item`.
 
   _**[>]**_
@@ -318,7 +330,7 @@ label {
 layout: two-cols
 ---
 
-```js {1-4|2,9,21|2,9-21|6|1-2,6,9-14,21|1-2,6,9-17,21|1-2,6-7,9-17,21|1-2,6-7,9-20,21}{lines: true}
+```js {all|1-4|2,9,21|2,9-21|6|1-2,6,9-14,21|1-2,6,9-17,21|1-2,6-7,9-17,21|1-2,6-7,9-20,21}{lines: true}
 let textInput = document.querySelector("#text-input");
 let addButton = document.querySelector("#add-button");
 let todoList = document.querySelector("#todo-list");
@@ -363,7 +375,9 @@ addButton.addEventListener("click", function() {
 <!--
   This is some of the JavaScript that's in the `script.js` file.
 
-  The first four lines are using the same query selectors to get the tags we want from our HTML to use in JavaScript.
+  Once again, a very different looking language.
+
+  The first four lines are using the same selectors we saw earlier, to get the tags we want from our HTML, so that we can use it here in JavaScript.
   `#text-input` to get our input tag with id `text-input`, `#add-button` to get our button tag with id `add-button`, and so on.
 
   Using our `addButton`, we add an *event listener* to the button, just meaning that when it's clicked, some function runs.
@@ -450,4 +464,55 @@ function createItemElement(item) {
 layout: center
 ---
 
-[bit.ly/ccny-web-workshop](https://bit.ly/ccny-web-workshop){class="text-4xl font-bold"}
+<https://bit.ly/ccny-web-workshop>{class="text-4xl font-bold"}
+
+---
+layout: center
+---
+
+<box class="flex flex-col relative p-4 gap-2 bg-green b-green bg-op-20 w-150 h-full items-center">
+
+  ![BYTE Logo](/byte.jpg){class="absolute top--10 right--25 w-50 rounded-full"}
+
+  <div class="text-4xl font-bold w-80">ACM B.Y.T.E 2024 Spring Cohort</div>
+
+  ![BYTE QR Code](/byte-qrcode.png){class="h-50 bg-white p-2 rounded-3"}
+
+  <https://forms.gle/th9v24PAdPQYtPd4A>
+</box>
+
+<!--
+  B.Y.T.E stands for Build Your Technical Experience.
+
+  Together with the guidance of an experienced board, you as a member of BYTE will build software with your peers. We want you to develop team work and project planning skills, and be provided with supervision and a sense of community. Giving you the confidence to build applications outside of your CCNY education.
+
+  By participating, you will gain experience in which field of software engineering you want to pursue (i.e. data science, backend, etc.). This exposure is invaluable to your development as a software engineer and for your resume. If this is what you're looking for in your career, please consider applying!
+ -->
+
+---
+layout: center
+---
+
+<box class="relative flex flex-col p-4 bg-blue b-blue bg-op-20 w-150 h-full items-center justify-center">
+
+  ![GWC Logo](/gwc.png){class="absolute top--10 right--23 w-50"}
+
+  <div class="text-4xl font-bold w-80">Girls Who Code Club Discord</div>
+
+  ![GWC QR Code](/gwc-qrcode.png){class="h-50 bg-white p-4 rounded-3"}
+
+  <https://tinyurl.com/ccnygwc>
+
+</box>
+
+<!--
+  Join the Mentoring Corps: mentor high school students. 3-5 hour commitment per month. No prior coding experience required. About $400 for the semester. Join our Girl's Who Code club discord and let us know you would like to participate!
+
+  6/313 is the Girls Who Code club's official club room for the spring semester. You can stop by any Thursday between 12:30 to 2 PM to chill and make friends!
+ -->
+
+---
+layout: center
+---
+
+  ![Headstarter](/headstarter.jpg){class="h-120"}
