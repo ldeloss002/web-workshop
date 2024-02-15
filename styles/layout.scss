@@ -2,7 +2,11 @@
   /* default theme color */
   /* can be overrided by uses `themeConfig` option */
   --slidev-theme-primary: #7d5cc6;
+
+  font-variant-ligatures: none;
 }
+
+
 
 .slidev-layout {
   // background-color: #111;

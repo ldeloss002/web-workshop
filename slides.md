@@ -323,6 +323,8 @@ label {
   Here I've selected `li.todo-item`, which is the `li` tag with the class `todo-item`.
   Don't mind that it's inside the `ul`, but do mind that how `ul` has the `todo-list` id, and shown with the `ul#todo-list`.
 
+  [WAIT]
+
   I won't go into details about the CSS properties *yet*, as we'll worry about how the website works first, then we can make it look nice.
  -->
 
@@ -357,18 +359,18 @@ addButton.addEventListener("click", function() {
 ```
 
 <div class="flex flex-col gap-2 items-center">
-  <div v-click="3" :class="['flex', 'flex-col', 'gap-4', 'items-center', { 'opacity-50': $clicks > 6 }]">
+  <div v-click="4" :class="['flex', 'flex-col', 'gap-4', 'items-center', { 'opacity-50': $clicks > 7 }]">
     <pre><code
       v-html="'state = ' + (
-        $clicks < 5 ? '[\n\t...\n]' : `[\n\t{\n\t\tid: ${Date.now()},\n\t\tcontent: ...,\n\t\tchecked: false\n\t}\n]
+        $clicks < 6 ? '[\n\t...\n]' : `[\n\t{\n\t\tid: ${Date.now()},\n\t\tcontent: ...,\n\t\tchecked: false\n\t}\n]
       `)"
     /></pre>
   </div>
 
-  <div :class="['flex', 'flex-col', 'gap-4', 'items-center', { 'opacity-50': $clicks > 2 && $clicks < 7 }]">
-    <prompt v-click="1" :add-class="{ 'animate-heart-beat': $clicks > 0 }" />
-    <task v-click="2" />
-    <task v-click="7" />
+  <div :class="['flex', 'flex-col', 'gap-4', 'items-center', { 'opacity-50': $clicks > 3 && $clicks < 8 }]">
+    <prompt v-click="2" :add-class="{ 'animate-heart-beat': $clicks > 1 }" />
+    <task v-click="3" />
+    <task v-click="8" />
   </div>
 </div>
 
@@ -459,6 +461,10 @@ function createItemElement(item) {
     />
   </div>
 </div>
+
+<!--
+
+ -->
 
 ---
 layout: center
